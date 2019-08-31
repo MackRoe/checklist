@@ -30,7 +30,7 @@ def list_all_items():
 
 #to mark as completed
 def mark_completed(index):
-	if item_worn = true:
+	if item_worn == true:
 		print ("√ {}".format(list_item))
 
 def select(function_code):
