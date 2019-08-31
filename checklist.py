@@ -69,6 +69,16 @@ def test():
 	print(read(0))
 	list_all_items()
 
+    # New Testing code
+    select("C")
+    list_all_items()
+    select ("R")
+    list_all_items()
+    select("P")
+    list_all_items()
+    select(" ")
+    list_all_items()
+
 color_list = ["red", "purple", "blue", "green", "yellow", "orange"]
 
 
