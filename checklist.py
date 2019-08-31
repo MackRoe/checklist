@@ -1,5 +1,5 @@
-checklist = list()
 
+checklist = list()
 
 
 # CREATE
@@ -22,30 +22,32 @@ def destroy(index):
     checklist.pop(index)
 
 # Verify correct index
-#len(checklist)
+# len(checklist)
 
 
 def list_all_items():
     index = 0
     for list_item in checklist:
-#formats output and accommodates different data types
-    print("{} {}".format(index, list_item))
+        print(("{} {}").format(index, list_item))
+        # formats output and accommodates different data types
     index += 1
 
-#to mark as completed
+
+# to mark as completed
 def mark_completed(index):
     if item_worn == true:
-    print ("√ {}".format(list_item))
+        print("√ {}".format(list_item))
+
 
 def select(function_code):
-    #CREATE ITEM
+    # CREATE ITEM
     if function_code == "C":
         input_item = user_input("Input item:")
         create(input_item)
     elif function_code == "R":
         item_index = user_input("Index number?")
-        #potential crash warning item_index
-    #print all items
+        # potential crash warning item_index
+    # print all items
         read(item_index)
     elif function_code == "P":
         list_all_items()
@@ -55,12 +57,12 @@ def select(function_code):
 
 def test():
     # Add your testing code here
-    #def verify_index(checklist):
-    #for x in checklist(x):
-    #if x > len(checklist):
-    #print ("Error! There aren't that many items in the list.")
-    #else:
-    #print (read(x))
+    # def verify_index(checklist):
+    # for x in checklist(x):
+    # if x > len(checklist):
+    # print ("Error! There aren't that many items in the list.")
+    # else:
+    # print (read(x))
     create("purple sox")
     create("red cloak")
 
@@ -76,30 +78,33 @@ def test():
     # New Testing code
     select("C")
     list_all_items()
-    select ("R")
+    select("R")
     list_all_items()
     select("P")
     list_all_items()
     select(" ")
     list_all_items()
 
-color_list = ["red", "purple", "blue", "green", "yellow", "orange"]
 
+color_list = ["red", "purple", "blue", "green", "yellow", "orange"]
+clothing_items = ["pants", "shirt", "jacket", "hat", "socks", "shoes"]
 
 test()
 
 
 # experimental learning exercize code
 
-print ("Good morning, Cpt Rainbow. It's time to get dressed.")
+print("Good morning, Cpt Rainbow. It's time to get dressed.")
 # GET WORN ITEMS
 worn_item = input("What would you like to wear first?")
 create(worn_item)
 worn_color = ("What color is it? ")
-#stopped work at <h2> select </h2>
-#https://www.makeschool.com/academy/track/standalone/captain-rainbow-s-color-checklist/helper-functions
 
-print("Is {} worn?).format(worn_item))
+# stopped work at <h2> select </h2>
+
+# https://www.makeschool.com/academy/track/standalone/captain-rainbow-s-color-checklist/helper-functions
+
+print(("Is {} worn?).format(worn_item))
 worn_confirm = input(:)
     if worn_confirm == "yes" or "Yes" or "YES":
         print ("{} {} is worn.".format(worn_color, worn_item))
