@@ -50,13 +50,12 @@ def select(function_code):
 
 def test():
 	# Add your testing code here
-	def verify_index(checklist):
-		for x in checklist(x):
-			if x > len(checklist):
-				print ("Error! There aren't that many items in the list.")
-			else:
-				print (read(x))
-
+	#def verify_index(checklist):
+		#for x in checklist(x):
+			#if x > len(checklist):
+				#print ("Error! There aren't that many items in the list.")
+			#else:
+				#print (read(x))
 	create("purple sox")
 	create("red cloak")
 
