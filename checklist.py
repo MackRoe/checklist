@@ -125,3 +125,9 @@ def confirm():
             print("Select another clothing item to continue dressing: ")
     else:
         print("Please wear selected item.")
+
+
+running = True
+while running:
+    selection = input("Press C to add to list, R to read from list, and P to display list")
+    select(selection)
