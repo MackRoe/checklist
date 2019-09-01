@@ -97,8 +97,13 @@ clothing_items = ["pants", "shirt", "jacket", "hat", "socks", "shoes"]
 print("Good morning, Cpt Rainbow. It's time to get dressed.")
 # GET WORN ITEMS
 worn_item = input("What would you like to wear first?")
-create(worn_item)
-worn_color = ("What color is it? ")
+if worn_item == clothing_items():
+    create(worn_item)
+else:
+    print("That item is not available to wear today.")
+    print("Please select one of the following:")
+    print(clothing_items())
+color_picked = ("What color is it? ")
 
 # stopped work at <h2> select </h2>
 
