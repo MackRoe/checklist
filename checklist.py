@@ -42,13 +42,13 @@ def mark_completed(index):
 def select(function_code):
     # CREATE ITEM
     if function_code == "C":
-        input_item = user_input("Input item:")
+        input_item = input("Input item:")
         create(input_item)
     elif function_code == "R":
-        item_index = user_input("Index number?")
+        item_index = input("Index number?")
         # potential crash warning item_index
     # print all items
-        read(item_index)
+        read(int(item_index))
     elif function_code == "P":
         list_all_items()
     else:
@@ -89,7 +89,7 @@ def test():
 color_list = ["red", "purple", "blue", "green", "yellow", "orange"]
 clothing_items = ["pants", "shirt", "jacket", "hat", "socks", "shoes"]
 
-test()
+# test()
 
 
 # experimental learning exercize code
@@ -104,10 +104,15 @@ worn_color = ("What color is it? ")
 
 # https://www.makeschool.com/academy/track/standalone/captain-rainbow-s-color-checklist/helper-functions
 
-print(("Is {} worn?).format(worn_item))
-worn_confirm = input(:)
+
+print("Is %s worn?") % worn_item
+worn_confirm = input(":")
+
+
+# verify item worn
+def confirm():
     if worn_confirm == "yes" or "Yes" or "YES":
-        print ("{} {} is worn.".format(worn_color, worn_item))
+        print("%s %s is worn.") % worn_color, worn_item
         color_picked = color_picked.append(worn_color)
         if worn_color == color_list:
             print("You are done dressing. Have a FABULOUS day!")
