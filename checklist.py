@@ -1,3 +1,6 @@
+import sys
+from termcolor import colored, cprint
+
 
 checklist = list()
 
@@ -28,7 +31,8 @@ def destroy(index):
 def list_all_items():
     index = 0
     for list_item in checklist:
-        print(("{} {}").format(index, list_item))
+        cprint("{} {}".format(index, list_item), "cyan", "on_magenta")
+        # removed extra parenthesis around "{} {}" √
         # formats output and accommodates different data types
     index += 1
 
@@ -61,6 +65,10 @@ def select(function_code):
         print("Unknown Option")
 
 
+def user_input(prompt):
+    user_input = input(prompt)
+    return user_input
+
 def test():
     # Add your testing code here
     #
@@ -82,6 +90,7 @@ def test():
     destroy(1)
 
     print(read(0))
+
     list_all_items()
 
     # New Testing code
@@ -94,6 +103,9 @@ def test():
     select(" ")
     list_all_items()
 
+    user_value = user_input("Please enter a value: ")
+    print(user_value)
+
 
 color_list = ["red", "purple", "blue", "green", "yellow", "orange"]
 clothing_items = ["pants", "shirt", "jacket", "hat", "socks", "shoes"]
@@ -101,42 +113,40 @@ clothing_items = ["pants", "shirt", "jacket", "hat", "socks", "shoes"]
 test()
 
 
-# experimental learning exercize code
+# experimental learning exercize code - extra code commented out
 
-print("Good morning, Cpt Rainbow. It's time to get dressed.")
+# print("Good morning, Cpt Rainbow. It's time to get dressed.")
 # GET WORN ITEMS
-worn_item = input("What would you like to wear first?")
-if worn_item == clothing_items():
-    create(worn_item)
-else:
-    print("That item is not available to wear today.")
-    print("Please select one of the following:")
-    print(clothing_items())
-color_picked = input("What color is it? ")
-
-# stopped work at <h2> select </h2>
+# worn_item = input("What would you like to wear first?")
+# if worn_item == clothing_items():
+    # create(worn_item)
+# else:
+    # print("That item is not available to wear today.")
+    # print("Please select one of the following:")
+    # print(clothing_items())
+# color_picked = input("What color is it? ")
 
 # https://www.makeschool.com/academy/track/standalone/captain-rainbow-s-color-checklist/helper-functions
 
 
-print("Is %s worn?") % worn_item
-worn_confirm = input(":")
+# print("Is %s worn?") % worn_item
+# worn_confirm = input(":")
 
 
-# verify item worn
-def confirm():
-    if worn_confirm == "yes" or "Yes" or "YES":
-        print("%s %s is worn.") % worn_color, worn_item
-        color_picked = color_picked.append(worn_color)
-        if worn_color == color_list:
-            print("You are done dressing. Have a FABULOUS day!")
-        else:
-            print("Select another clothing item to continue dressing: ")
-    else:
-        print("Please wear selected item.")
+# verify item worn - extra code commented out
+# def confirm():
+    # if worn_confirm == "yes" or "Yes" or "YES":
+        # print("%s %s is worn.") % worn_color, worn_item
+        # color_picked = color_picked.append(worn_color)
+        # if worn_color == color_list:
+            # print("You are done dressing. Have a FABULOUS day!")
+        # else:
+            # print("Select another clothing item to continue dressing: ")
+    # else:
+        # print("Please wear selected item.")
 
 
 running = True
 while running:
     selection = input("Press C to add to list, R to read from list, P to display list, or Q to quit")
-    select(selection)
+    running = select(selection)
