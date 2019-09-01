@@ -46,17 +46,26 @@ def select(function_code):
         create(input_item)
     elif function_code == "R":
         item_index = input("Index number?")
+        if int(item_index) > len(checklist):
+            print("Index is out of range. Please choose an index less than " + len(checklist))
+            item_index = input("Index: ")
         # potential crash warning item_index
     # print all items
         read(int(item_index))
+        print(int(item_index))
     elif function_code == "P":
         list_all_items()
+    elif function_code == "Q":
+        return False
     else:
         print("Unknown Option")
 
 
 def test():
     # Add your testing code here
+    #
+    # commented out experimental learning function_code
+    #
     # def verify_index(checklist):
     # for x in checklist(x):
     # if x > len(checklist):
@@ -89,7 +98,7 @@ def test():
 color_list = ["red", "purple", "blue", "green", "yellow", "orange"]
 clothing_items = ["pants", "shirt", "jacket", "hat", "socks", "shoes"]
 
-# test()
+test()
 
 
 # experimental learning exercize code
@@ -103,7 +112,7 @@ else:
     print("That item is not available to wear today.")
     print("Please select one of the following:")
     print(clothing_items())
-color_picked = ("What color is it? ")
+color_picked = input("What color is it? ")
 
 # stopped work at <h2> select </h2>
 
@@ -129,5 +138,5 @@ def confirm():
 
 running = True
 while running:
-    selection = input("Press C to add to list, R to read from list, and P to display list")
+    selection = input("Press C to add to list, R to read from list, P to display list, or Q to quit")
     select(selection)
