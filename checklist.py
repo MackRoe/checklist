@@ -116,3 +116,7 @@ def confirm():
         color_picked = color_picked.append(worn_color)
         if worn_color == color_list:
             print("You are done dressing. Have a FABULOUS day!")
+        else:
+            print("Select another clothing item to continue dressing: ")
+    else:
+        print("Please wear selected item.")
