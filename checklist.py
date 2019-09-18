@@ -39,7 +39,8 @@ def list_all_items():
 
 # to mark as completed
 def mark_completed(index):
-    if item_worn == True:
+    # if item_worn == True: ## commented out to try other code
+    if item_worn:
         print("√ {}".format(list_item))
 
 
@@ -50,14 +51,17 @@ def select(function_code):
         create(input_item)
     elif function_code.upper() == "R":
         item_index = input("Index number? ")
-        if int(item_index) > len(checklist):
+        if int(item_index) > len(checklist) and len(checklist) > 0:
             print("Index is out of range. Please choose an index less than ")
             print(str(len(checklist)) + ": ")
             item_index = input("Index: ")
+        elif len(checklist) == 0:
+            print("There are not yet any items in the list")
+        else:
         # potential crash warning item_index
     # print all items
-        read(int(item_index))
-        print(int(item_index))
+            read(int(item_index))
+            print(int(item_index))
     elif function_code.upper() == "P":
         list_all_items()
     elif function_code.upper() == "Q":
