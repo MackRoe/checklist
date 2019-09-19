@@ -49,6 +49,7 @@ def select(function_code):
     if function_code.upper() == "C":
         input_item = input("Input item: ")
         create(input_item)
+        return True
     elif function_code.upper() == "R":
         item_index = input("Index number? ")
         if int(item_index) > len(checklist) and len(checklist) > 0:
@@ -61,11 +62,15 @@ def select(function_code):
         # potential crash warning item_index
     # print all items
             read(int(item_index))
-            print(int(item_index))
+            print(int(checklist[item_index]))
+        return True
     elif function_code.upper() == "P":
         list_all_items()
+        return True
     elif function_code.upper() == "Q":
+
         return False
+        # changed 'return False' to return running,
     else:
         print("Unknown Option")
 
